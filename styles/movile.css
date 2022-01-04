@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+}
+:root {
+    --lg: 2.8rem;
+    --md: 1.6rem;
+    --sm: 1.5rem;
+    --text-color: #5D5D5D;
+    --title-color: black;
+}
+.main-container{
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+nav {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+nav > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    margin: 18px 0;
+}
+nav > header > img {
+    width: 48px;
+}
+nav > header > span {
+    font-size: var(--lg);
+    margin-left: 8px;
+    font-weight: 500;
+}
+nav > ul {
+    list-style: none;
+    width: 100%;
+    max-width: 425px;
+    height: auto;
+    border: solid 2px black;
+    height: 40vh;
+    overflow-y: auto;
+}
+nav > ul li{
+    padding: 8px 0;
+    border-bottom: solid 2px black;
+}
+nav > ul li:nth-last-child(1){
+    border: none;
+}
+nav > ul li a{
+    text-decoration: none;
+    font-size: var(--md);
+    color: var(--text-color);
+    margin-left: 24px;
+}
+main {
+    overflow-x: hidden;
+}
+
+main section header{
+    font-size: var(--lg);
+    text-transform: capitalize;
+    margin-left: 12px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+main section article {
+    color: var(--text-color);
+    font-size: var(--md);
+    margin: 0 16px;
+}
+
+main section article ul li{
+    margin-left: 24px;
+    margin-bottom: 8px;
+}
+main section article ul li:nth-child(1){
+    margin-top: 20px;
+}
+main section article code {
+    display: inline-block;
+    margin: 20px;
+}
+
+
+@media(min-width: 425px){
+    main{
+        margin: 0 20px;
+    }
+}
+
+@media(min-width: 768px){
+    .main-container {
+        grid-template-columns: auto 1fr;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    nav{
+        height: 100vh;
+        grid-template-rows: auto auto 1fr;
+    }
+    nav > ul {
+        height: 100%;
+        width: 300px;
+    }
+    main{
+        width: 100%;
+        height: 100vh;
+        overflow-y: scroll;
+        padding: 20px 32px 0 16px;
+    }
+}
